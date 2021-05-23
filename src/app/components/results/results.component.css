@@ -16,3 +16,17 @@
     align-items: center;
     margin-top: 2rem;
 }
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.back{
+    font-size: 2rem;
+    margin-top: auto;
+    color: lightgray;
+}
+.back:hover, .header-logo:hover{
+    cursor: pointer;
+}
