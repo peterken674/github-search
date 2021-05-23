@@ -15,7 +15,7 @@ body {
     margin: 0; 
     font-family: 'Roboto', "Helvetica Neue", sans-serif;
     background-color: #242424;
-    color: whitesmoke;
+    color: lightgrey;
  }
  button{
      border-color: var(--accent) !important;
@@ -25,9 +25,7 @@ body {
      color: white !important;
      background-color: var(--accent) !important;
  }
- .row{
-     width: 50%;
- }
+
  .github{
      font-size: 5rem;
      font-family: 'Exo', sans-serif;
@@ -51,6 +49,7 @@ input{
     background-color: transparent !important;
     text-align: center;
     outline: none;
+    color: white !important;
     border: none !important;
     border-bottom: 3px solid var(--accent) !important;
 }
