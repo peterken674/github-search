@@ -10,7 +10,7 @@ export class DataService {
 
     user: User;
     repo: Repo;
-    repos: Repo[];
+    repos = [];
 
 
 
@@ -20,7 +20,7 @@ export class DataService {
    }
 
   getData(username: string){
-    interface ApiResponse{
+    interface ApiResponseUser{
         login:string,
         name:string,
         location:string,
@@ -32,17 +32,17 @@ export class DataService {
         html_url:string,
         bio:string
     }
-    // interface ApiResponseRepo{
-    //     name:string,
-    //     description:string,
-    //     stargazers_count:number,
-    //     forks_count:number,
-    //     language:string,
-    //     svn_url:string
-    // }
-
+    interface ApiResponseRepo{
+        name:string,
+        description:string,
+        stargazers_count:number,
+        forks_count:number,
+        language:string,
+        svn_url:string
+    }
+    // User
     var promise = new Promise((resolve, reject) => {
-        this.http.get<ApiResponse>('https://api.github.com/users/' + username).toPromise().then(response =>{
+        this.http.get<ApiResponseUser>('https://api.github.com/users/' + username).toPromise().then(response =>{
             this.user.login = response.login;
             this.user.name = response.name;
             this.user.location = response.location;
@@ -57,25 +57,26 @@ export class DataService {
             resolve(response);
         }, error => {
             reject(error);
+        })
+        // Repositories
+        this.http.get<ApiResponseRepo[]>('https://api.github.com/users/' + username + '/repos').toPromise().then(response =>{
+            for (let i=0; i < response.length; i++){
+                this.repo.name = response[i].name;
+                this.repo.description = response[i].description;
+                this.repo.stargazers_count = response[i].stargazers_count;
+                this.repo.forks_count = response[i].forks_count;
+                this.repo.language = response[i].language;
+                this.repo.svn_url = response[i].svn_url;
+
+                this.repo = new Repo(this.repo.name, this.repo.description, this.repo.stargazers_count, this.repo.forks_count, this.repo.language, this.repo.svn_url);
+                this.repos.push(this.repo);
+            }
+
+            resolve(response);
+        }, error => {
+            reject(error);
         });
-
-        // this.http.get<ApiResponseRepo[]>('https://api.github.com/users/' + username).toPromise().then(response =>{
-        //     for (let i=0; i < response.length; i++){
-        //         this.repo.name = response[i].name;
-        //         this.repo.description = response[i].description;
-        //         this.repo.stargazers_count = response[i].stargazers_count;
-        //         this.repo.forks_count = response[i].forks_count;
-        //         this.repo.language = response[i].language;
-        //         this.repo.svn_url = response[i].svn_url;
-
-        //         this.repo = new Repo(this.repo.name, this.repo.description, this.repo.stargazers_count, this.repo.forks_count, this.repo.language, this.repo.svn_url);
-        //         this.repos.push(this.repo);
-        //     }
-
-        //     resolve(response);
-        // }, error => {
-        //     reject(error);
-        // });
+        // console.log(this.repos);
         return promise;
     });
   }
