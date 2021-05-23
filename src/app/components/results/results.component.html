@@ -15,30 +15,30 @@
   </div>
   <div class="row user mt-5">
         <div class="col-lg-4">
-            <img src="../../../assets/profile_red.jpg" alt="User Profile Picture" class="profile-pic">
+            <img src= {{user.avatar_url}} alt="User Profile Picture" class="profile-pic">
         </div>
         <div class="col-lg-4 profile-details">
-            <h2 class="name mb-0 mt-3"><strong>Peter Kennedy</strong></h2>
-            <p class="username">peterken674</p>
-            <p>What? It works on my machine.</p>
-            <small><i class="fa fa-map-marker" aria-hidden="true"></i>Nairobi, Kenya</small>
+            <h2 class="name mb-0 mt-3"><strong>{{ user.name }}</strong></h2>
+            <p class="username">{{ user.login }}</p>
+            <p>{{ user.bio }}</p>
+            <small><i class="fa fa-map-marker" aria-hidden="true"></i>{{ user.location }}</small>
             <div class="det-div">
-                <small><i class="fa fa-users" aria-hidden="true"></i>14 following</small>
-            <small><i class="fa fa-user-friends" aria-hidden="true"></i>34 followers</small>
+                <small><i class="fa fa-users" aria-hidden="true"></i>{{ user.following }} following</small>
+            <small><i class="fa fa-user-friends" aria-hidden="true"></i>{{ user.followers }} followers</small>
             </div>
-                <small><i class="fas fa-calendar"></i>June 29, 2018</small>
+                <small><i class="fas fa-calendar"></i>{{ user.created_at | date }}</small>
         </div>
         <div class="col-lg-4">
             <div class="mt-3">
-                <h2 class="mb-0">Total Repositories</h2>
-                <h1>56</h1>
+                <h2 class="mb-0">Public Repositories</h2>
+                <h1>{{ user.public_repos }}</h1>
             </div>
         </div>
   </div>
   <hr>
   <div class="row">
-      <div class="project m-3 p-3">
-          <h3><strong>flueed</strong></h3>
+      <div class="project m-3 p-3" *ngFor='let repo of repos, let i=index'>
+          <h3><strong>{{ repo.name }}</strong></h3>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
           <div class="project-meta">
               <p><i class="fas fa-star    "></i>0</p>

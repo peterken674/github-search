@@ -21,7 +21,6 @@ export class SearchComponent implements OnInit {
     this.router.navigate(['../results']);
   }
   ngOnInit(): void {
-    
   }
 
 }
