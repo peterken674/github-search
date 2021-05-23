@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Repo } from '../classes/repo';
 import { User } from '../classes/user';
 import { HttpClient } from '@angular/common/http'
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +43,7 @@ export class DataService {
     }
     // User
     var promise = new Promise((resolve, reject) => {
-        this.http.get<ApiResponseUser>('https://api.github.com/users/' + username).toPromise().then(response =>{
+        this.http.get<ApiResponseUser>('https://api.github.com/users/' + username + '?access_token=' + environment.access_token).toPromise().then(response =>{
             this.user.login = response.login;
             this.user.name = response.name;
             this.user.location = response.location;
