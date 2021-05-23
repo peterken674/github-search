@@ -7,7 +7,10 @@ import { SearchComponent } from './components/search/search.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProjectComponent } from './components/project/project.component';
 
-import { DataService } from "./data-service/data.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './data-service/data.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { DataService } from "./data-service/data.service";
     ProjectComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ DataService ],
   bootstrap: [AppComponent]

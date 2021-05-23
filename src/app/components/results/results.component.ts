@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/classes/user';
+import { DataService } from 'src/app/data-service/data.service';
+
 
 @Component({
   selector: 'app-results',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  constructor() { }
+    user: User;
+    dataService: DataService;
+    
+  constructor(dataService: DataService) { 
+      this.dataService = dataService;
+  }
 
   ngOnInit(): void {
+      this.user = this.dataService.user;
   }
 
 }

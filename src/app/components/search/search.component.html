@@ -1,1 +1,14 @@
-<p>search works!</p>
+<div class="container">
+  <form (ngSubmit)="startSearch()">
+    <div class="my-4">
+      <label for="username">Enter your username</label>
+      <input class="form-control" type="text" id="username" name="username" [(ngModel)]="username"/>
+      <button type="submit" class="btn btn-outline-success text-uppercase my-3">
+        Search
+      </button>
+      <div class="card">
+        <app-results></app-results>
+      </div>
+    </div>
+  </form>
+</div>
