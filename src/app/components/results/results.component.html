@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="back">
-        <i class="fas fa-search    " routerLink='../search'></i>
+        <i class="fas fa-search" routerLink='../search'></i>
     </div>
   </div>
   <div class="row user mt-5" *ngIf='isDoneLoading'>
@@ -28,11 +28,9 @@
             </div>
                 <small><i class="fas fa-calendar"></i>{{ user.created_at | date }}</small>
         </div>
-        <div class="col-lg-4">
-            <div class="mt-3">
+        <div class="col-lg-4 mt-3 public-repos">
                 <h2 class="mb-0">Public Repositories</h2>
-                <h1 class="repos">{{ user.public_repos }}</h1>
-            </div>
+                <h1 class="repos"><i class="far fa-file-code"></i>{{ user.public_repos }}</h1>
         </div>
   </div>
   <hr>
