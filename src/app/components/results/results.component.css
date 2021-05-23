@@ -1,0 +1,18 @@
+.logo-results{
+    font-size: 4rem !important;
+}
+.github{
+    font-size: 3rem;
+}
+.search{
+    font-size: 1.5rem;
+}
+.logo-text{
+    text-align: left;
+}
+.header-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+}
