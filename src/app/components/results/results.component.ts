@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Repo } from 'src/app/classes/repo';
 import { User } from 'src/app/classes/user';
 import { DataService } from 'src/app/data-service/data.service';
+
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 @Component({
@@ -11,6 +12,7 @@ import { DataService } from 'src/app/data-service/data.service';
 })
 export class ResultsComponent implements OnInit {
 
+    faArrowLeft = faArrowLeft;
     user: User;
     repos = [];
     dataService: DataService;

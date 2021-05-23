@@ -1,14 +1,22 @@
 <div class="container">
-  <form (ngSubmit)="startSearch()">
-    <div class="my-4">
-      <label for="username">Enter your username</label>
-      <input class="form-control" type="text" id="username" name="username" [(ngModel)]="username"/>
-      <button type="submit" class="btn btn-outline-success text-uppercase my-3">
-        Search
-      </button>
-      <div class="card">
-        <app-results></app-results>
+  <div class="row text-center">
+    <div class="title">
+      <div class="logo">
+          <i class="fa fa-github my-5" aria-hidden="true"></i>
       </div>
+      <div class="github">GitHub</div>
+      <div class="search text-uppercase my-4">Search</div>
     </div>
-  </form>
+    <div class="form">
+      <form (ngSubmit)="startSearch()">
+        <div class="my-4">
+          <input class="form-control" type="text" id="username" name="username" [(ngModel)]="username"
+            placeholder="Enter username to search" />
+          <button type="submit" class="btn btn-outline-success text-uppercase my-3">
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
