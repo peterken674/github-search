@@ -71,7 +71,12 @@ h2,h3{
 .project{
     background-color: #1f1f1f;
     width: 20%;
+    min-width: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.projects-container{
+    display: flex;
+    justify-content: center;
 }

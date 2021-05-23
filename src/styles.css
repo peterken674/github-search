@@ -56,3 +56,13 @@ input{
 input:focus{
     outline: none !important;
 }
+a{
+    text-decoration: none;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    transition: all 300ms;
+}
+a:hover{
+    border-bottom: 2px solid lightgrey;
+    color: var(--accent);
+}
