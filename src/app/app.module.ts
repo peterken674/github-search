@@ -7,6 +7,8 @@ import { SearchComponent } from './components/search/search.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProjectComponent } from './components/project/project.component';
 
+import { DataService } from "./data-service/data.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,7 @@ import { ProjectComponent } from './components/project/project.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ DataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
