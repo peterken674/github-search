@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { DateCountPipe } from './date-count.pipe';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HoverHighlightDirective } from './hover-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ResultsComponent,
     SearchComponent,
     DateCountPipe,
-    NotFoundComponent
+    NotFoundComponent,
+    HoverHighlightDirective
   ],
   imports: [
     BrowserModule,

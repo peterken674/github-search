@@ -36,7 +36,7 @@
   </div>
   <hr>
   <div class="row projects-container" *ngIf='isDoneLoading'>
-      <div class="project m-3 p-3" *ngFor='let repo of repos, let i=index'>
+      <div class="project m-3 p-3" *ngFor='let repo of repos, let i=index' appHoverHighlight>
           <div class="project-name">
               <h3><strong><a href="{{ repo.svn_url }}" target="_blank" rel="noopener noreferrer">{{ repo.name }}</a></strong></h3>
           </div>

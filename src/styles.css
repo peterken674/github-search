@@ -9,6 +9,7 @@
 
 *{
     font-family: 'Roboto', sans-serif;
+    transition: all 200ms ease-in-out !important;
 }
 html, body { height: 100%; }
 body { 
