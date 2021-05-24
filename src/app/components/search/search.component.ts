@@ -10,6 +10,7 @@ import { DataService } from 'src/app/data-service/data.service';
 export class SearchComponent implements OnInit {
 
     username: string;
+    isNotEmpty: boolean;
     dataService: DataService;
 
   constructor(dataService: DataService, private router: Router) {
@@ -17,10 +18,19 @@ export class SearchComponent implements OnInit {
    }
 
   startSearch(){
-    this.dataService.getData(this.username);
-    this.router.navigate(['../results']);
+    if(this.username){
+        this.dataService.getData(this.username);
+        this.router.navigate(['../results']);
+    }else{
+        this.isNotEmpty = true;
+    }
   }
+  hideAlert(){
+      this.isNotEmpty = false;
+  }
+
   ngOnInit(): void {
+      this.isNotEmpty = false;
   }
 
 }

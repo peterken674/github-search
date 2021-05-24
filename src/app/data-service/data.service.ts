@@ -57,6 +57,7 @@ export class DataService {
 
             resolve(response);
         }, error => {
+            console.log(error);
             reject(error);
         })
         // Repositories

@@ -49,9 +49,14 @@ input{
     background-color: transparent !important;
     text-align: center;
     outline: none;
+    border-radius: 0 !important;
     color: white !important;
-    border: none !important;
-    border-bottom: 3px solid var(--accent) !important;
+    border-top-style: hidden !important;
+    border-left-style: hidden !important;
+    border-right-style: hidden !important;
+    border-bottom-style: solid !important;
+    border-color: var(--accent) !important;
+
 }
 input:focus{
     outline: none !important;
