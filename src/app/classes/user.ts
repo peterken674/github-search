@@ -9,6 +9,7 @@ export class User {
         public created_at:Date,
         public avatar_url:string,
         public html_url:string,
-        public bio:string
+        public bio:string,
+        public updated_at:Date
         ){ }
 }

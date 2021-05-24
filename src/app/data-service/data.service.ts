@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Repo } from '../classes/repo';
 import { User } from '../classes/user';
 import { HttpClient } from '@angular/common/http'
-import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,10 @@ export class DataService {
 
 
 
-  constructor(private http: HttpClient) {
-      this.user = new User("", "", "", 0, 0, 0, new Date(), "", "", "");
+  constructor(private http: HttpClient, private router: Router) {
+      this.user = new User("", "", "", 0, 0, 0, new Date(), "", "", "", new Date());
       this.repo = new Repo("", "", 0, 0, "", "");
+      this.router = router;
    }
 
   getData(username: string){
@@ -31,7 +33,8 @@ export class DataService {
         created_at:Date,
         avatar_url:string,
         html_url:string,
-        bio:string
+        bio:string,
+        updated_at:Date
     }
     interface ApiResponseRepo{
         name:string,
@@ -54,10 +57,14 @@ export class DataService {
             this.user.avatar_url = response.avatar_url;
             this.user.html_url = response.html_url;
             this.user.bio = response.bio;
+            this.user.updated_at = response.updated_at;
 
             resolve(response);
         }, error => {
-            console.log(error);
+            let status = error.status;
+            if (status == 404){
+                this.router.navigate(['../404']);    
+            }
             reject(error);
         })
         // Repositories
@@ -76,6 +83,10 @@ export class DataService {
 
             resolve(response);
         }, error => {
+            let status = error.status;
+            if (status == 404){
+                this.router.navigate(['../404']);    
+            }
             reject(error);
         });
         // console.log(this.repos);
