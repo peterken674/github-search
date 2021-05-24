@@ -14,7 +14,7 @@ export class DateCountPipe implements PipeTransform {
         const SECONDS_IN_MIN = 60;
         var dateDifferenceSeconds = dateDifference * 0.001;
         var dateCounter = dateDifferenceSeconds / SECONDS_IN_DAY;
-        console.log(dateCounter);
+        console.log(`Updated: ${updated}, Today: ${today}`);
 
         if (dateCounter > 30 && updated < today) {
             var months = Math.trunc(dateCounter / 30);
@@ -33,7 +33,7 @@ export class DateCountPipe implements PipeTransform {
         } else if (dateCounter === 30) {
             return '1 month';
         } else if (dateCounter < 30 && dateCounter > 1) {
-            return `${dateCounter} days`;
+            return `${Math.trunc(dateCounter)} days`;
         } else if (dateCounter === 1) {
             return "1 day";
         } else if (dateCounter < 1) {
