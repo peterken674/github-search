@@ -16,7 +16,7 @@ export class DataService {
 
 
   constructor(private http: HttpClient) {
-      this.user = new User("", "", "", 0, 0, 0, new Date(), "", "", "");
+      this.user = new User("", "", "", 0, 0, 0, new Date(), "", "", "", new Date());
       this.repo = new Repo("", "", 0, 0, "", "");
    }
 
@@ -31,7 +31,8 @@ export class DataService {
         created_at:Date,
         avatar_url:string,
         html_url:string,
-        bio:string
+        bio:string,
+        updated_at:Date
     }
     interface ApiResponseRepo{
         name:string,
@@ -54,6 +55,7 @@ export class DataService {
             this.user.avatar_url = response.avatar_url;
             this.user.html_url = response.html_url;
             this.user.bio = response.bio;
+            this.user.updated_at = response.updated_at;
 
             resolve(response);
         }, error => {

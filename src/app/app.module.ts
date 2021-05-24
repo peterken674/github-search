@@ -11,12 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data-service/data.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResultsComponent,
-    SearchComponent
+    SearchComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
