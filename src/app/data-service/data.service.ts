@@ -43,7 +43,7 @@ export class DataService {
     }
     // User
     var promise = new Promise((resolve, reject) => {
-        this.http.get<ApiResponseUser>('https://api.github.com/users/' + username + '?access_token=' + environment.access_token).toPromise().then(response =>{
+        this.http.get<ApiResponseUser>('https://api.github.com/users/' + username).toPromise().then(response =>{
             this.user.login = response.login;
             this.user.name = response.name;
             this.user.location = response.location;
@@ -57,6 +57,7 @@ export class DataService {
 
             resolve(response);
         }, error => {
+            console.log(error);
             reject(error);
         })
         // Repositories
