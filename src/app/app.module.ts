@@ -12,13 +12,15 @@ import { DataService } from './data-service/data.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { DateCountPipe } from './date-count.pipe';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResultsComponent,
     SearchComponent,
-    DateCountPipe
+    DateCountPipe,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
