@@ -1,13 +1,13 @@
 # Github Search
 ### By **Peter Kennedy**
 #
-![Search Page](./src/assets/search.png)
+![Search Page](src/assets/search.png)
 Search Page
 #
-![Results Page](./src/assets/results.png)
+![Results Page](src/assets/results.png)
 Search Results
 #
-![Results Page](./src/assets/404.png)
+![404 Page](src/assets/404.png)
 Search Results
 #
 ## Description
