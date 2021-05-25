@@ -1,11 +1,15 @@
 # Github Search
-#### By **Peter Kennedy**
-
-![Search Page](./src/assets/)
+### By **Peter Kennedy**
+#
+![Search Page](./src/assets/search.png)
 Search Page
-
-![Results Page](./src/assets/)
+#
+![Results Page](./src/assets/results.png)
 Search Results
+#
+![Results Page](./src/assets/404.png)
+Search Results
+#
 ## Description
 Github search is a website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories.
 
